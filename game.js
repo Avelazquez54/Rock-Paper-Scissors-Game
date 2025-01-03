@@ -17,7 +17,6 @@ function getComputerChoice() {
 // Prompts the user to enter either rock, paper, scissors and returns this value. 
 // Repeats the cycle if the user doesn't enter one of these options.
 function getUserChoice() {
-    setTimeout(6000);
     let response = prompt("Please enter rock, paper, or scissors");
     let answer = response.toLowerCase();
 
@@ -83,4 +82,4 @@ function RockPaperScissors(playerScore, compScore){
  let userScore = 0;
  let computerScore = 0;
 
- setTimeout(RockPaperScissors(userScore,computerScore), 3000);
+RockPaperScissors(userScore,computerScore);
