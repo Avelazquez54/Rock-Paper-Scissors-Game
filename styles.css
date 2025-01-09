@@ -1,8 +1,16 @@
 body {
-    background-color: lightsalmon;
+    background-color: orange;
     text-align: center;
 }
 
 p{
-    font-size: 1.2em;
+    font-size: 1.8em;
+}
+
+button{
+    background-color: inherit;
+    font-size:50px;
+    margin:20px;
+    /* border:none; */
+    /* cursor: pointer; */
 }

@@ -1,5 +1,86 @@
-// console.log("Hello Gaming World!"); // Used to test if html file is connected to this .js file
+let userScore = 0;
+let computerScore = 0;
 
+const result = document.querySelector("#options");
+const para = document.createElement("p");
+const scores = document.createElement("p");
+result.appendChild(para);
+
+const btn = document.querySelector("#options");
+btn.addEventListener("click", (event)=> {
+let value = event.target;
+let input = value.id;
+
+const choice = input.toLowerCase();
+let compChoice = getComputerChoice()
+
+switch(choice){
+    case 'rock':
+        // console.log(choice);
+        playRound(choice, compChoice);
+        break;
+    case 'paper':
+        // console.log(choice);
+        playRound(choice, compChoice);
+        break;
+    case 'scissors':
+        // console.log(choice);
+        playRound(choice, compChoice);
+        break;
+    }
+});
+
+function playRound(userInput, computerChoice) {
+    // const result = document.querySelector("#options");
+    // const para = document.createElement("p");
+    // const scores = document.createElement("p");
+    // result.appendChild(para);
+
+    if (userInput === "rock" && computerChoice === "paper"){
+        para.textContent = "Somehow, their paper stopped your rock. You lost this round.";
+        computerScore++;
+    } else if (userInput === "paper" && computerChoice === "rock"){
+        para.textContent = "You stopped their advance with your handy-dandy paper. You win this round!";
+        userScore++;
+    } else if (userInput === "rock" && computerChoice === "scissors"){
+        para.textContent = "You shattered their blade with that rock. You win this round!";
+        userScore++;
+    } else if (userInput === "scissors" && computerChoice === "rock"){
+        para.textContent = "A dull blade won't cut through this rock. You lost this round.";
+        computerScore++;
+    } else if (userInput === "paper" && computerChoice === "scissors"){
+        para.textContent = "You got sliced and diced mate! You lost this round.";
+        computerScore++;
+    } else if (userInput === "scissors" && computerChoice === "paper"){
+        para.textContent = "You tore that paper up, mate! You won this round.";
+        userScore++;
+    } else if (userInput === computerChoice){
+        para.textContent = "Both went for the same thing... whelp who could've guessed that. Go again!";
+    }
+    let user = "Results: User = " + userScore + "; Computer = " + computerScore;
+    scores.textContent = user;
+    result.appendChild(scores);
+    isGameOver();
+}
+
+// Game checks if 
+function isGameOver(){
+    if (userScore === 5) {
+        alert("CONGRATULATIONS! You demolished that game mate. The game will now restart.");
+        userScore = 0;
+        computerScore = 0;
+        para.textContent = "";
+        scores.textContent = "";
+        return;
+    } else if(computerScore === 5) {
+        alert("Unfortunately, you lost this game mate. The game will now restart.");
+        userScore = 0;
+        computerScore = 0;
+        para.textContent = "";
+        scores.textContent = "";
+        return;
+    }
+};
 
 // Generated random value for A.I./computer to assign it rock, paper, or scissor:
 function getComputerChoice() {
@@ -13,73 +94,3 @@ function getComputerChoice() {
         return "scissors";
     }
 };
-
-// Prompts the user to enter either rock, paper, scissors and returns this value. 
-// Repeats the cycle if the user doesn't enter one of these options.
-function getUserChoice() {
-    let response = prompt("Please enter rock, paper, or scissors");
-    let answer = response.toLowerCase();
-
-    if (answer != "rock" && answer != "paper" && answer != "scissors"){
-        while(answer != "rock" && answer != "paper" && answer != "scissors"){
-            let choice = prompt("Please enter rock, paper, or scissors");
-            answer = choice.toLowerCase();
-        }
-    }
-    return answer;
-}
-
-// Function that sets up the game for the user to player the A.I that gets a random
-function RockPaperScissors(playerScore, compScore){
-    let counter = 5; // Best out of five games
-    while(counter > 0){
-        let computerChoice = getComputerChoice();
-        // console.log("Computer gets:",computerChoice); // Used for debugging purposes.
-
-        let playerChoice = getUserChoice();
-        // console.log("Player chooses:",playerChoice); // Used for debugging purposes
-
-    // Below are cases where depending on the choices of both the player and the computer
-    // points are awarded and move to the next round.
-    if (playerChoice === "rock" && computerChoice === "paper"){
-        console.log("Somehow, their paper stopped your rock. You lost this round.");
-        compScore++;
-    } else if (playerChoice === "paper" && computerChoice === "rock"){
-        console.log("You stopped their advance with your handy-dandy paper. You win this round!");
-        playerScore++;
-    } else if (playerChoice === "rock" && computerChoice === "scissors"){
-        console.log("You shattered their blade with that rock. You win this round!");
-        playerScore++;
-    } else if (playerChoice === "scissors" && computerChoice === "rock"){
-        console.log("A dull blade won't cut through this rock. You lost this round.");
-        compScore++;
-    } else if (playerChoice === "paper" && computerChoice === "scissors"){
-        console.log("You got sliced and diced mate! You lost this round.");
-        compScore++;
-    } else if (playerChoice === "scissors" && computerChoice === "paper"){
-        console.log("You tore that paper up, mate! You won this round.");
-        playerScore++;
-    } else if (playerChoice === computerChoice){
-        console.log("Both went for the same thing... whelp who could've guessed that. Go again!");
-        counter++;
-    }
-    counter--;
-    // Display scores for the user to keep track off after every round
-    console.log("Result: User =",playerScore, ". Computer = ", compScore); 
-
-    if (compScore === 3 || playerScore === 3) { // Incase we get a decider victory early on. 
-        break;
-    }
-    }
-    // Compare the final scores and decide the winner!
-    if (compScore > playerScore) {
-        console.log("Unfortunately, you lost this game mate.");
-    } else if (compScore < playerScore) {
-        console.log("CONGRATULATIONS! You demolished that game mate.");
-    } 
-}
-
- let userScore = 0;
- let computerScore = 0;
-
-RockPaperScissors(userScore,computerScore);
