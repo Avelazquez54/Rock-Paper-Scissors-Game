@@ -6,7 +6,7 @@ body {
 }
 
 h1{
-    background:rgb(240, 111, 25);
+    background:rgb(255, 132, 49);
     padding:40px;
     margin:0;
     color:black;
@@ -14,7 +14,7 @@ h1{
 }
 
 p{
-    font-size: 1.8em;
+    font-size: 2.3em;
 }
 
 button{
@@ -22,19 +22,20 @@ button{
     background-color: inherit;
     font-size:50px;
     margin:auto 25px;
-    border:2px solid;
-    outline:none;
+    border:none;
+    /* outline:none; */
     cursor: pointer;
     transition-duration: 0.4s;
 }
 
 button:hover{
-    background-color:rgb(59, 46, 179);
+    background-color:#342f66;
 }
 
 footer{
+    /* font-size:1.8em; */
     color:black;
-    background:rgb(240, 111, 25);
+    background:rgb(255, 132, 49);
     width:100%;
     position:fixed;
     bottom:0;
