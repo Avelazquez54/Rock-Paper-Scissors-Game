@@ -33,7 +33,7 @@ button:hover{
 }
 
 footer{
-    /* font-size:1.8em; */
+    font-weight: bold;
     color:black;
     background:rgb(255, 132, 49);
     width:100%;
