@@ -2,14 +2,15 @@ body {
     background-color: #17152f;
     text-align: center;
     margin:auto;
-    color:white;
+    color:gold;
 }
 
 h1{
-    background:rgb(61, 61, 61);
+    background:rgb(240, 111, 25);
     padding:40px;
     margin:0;
-    color:black
+    color:black;
+    border-bottom: 5px solid gold;
 }
 
 p{
@@ -17,7 +18,7 @@ p{
 }
 
 button{
-    color:white;
+    color:gold;
     background-color: inherit;
     font-size:50px;
     margin:auto 25px;
@@ -28,15 +29,17 @@ button{
 }
 
 button:hover{
-    background-color:lightskyblue;
+    background-color:rgb(59, 46, 179);
 }
 
 footer{
+    color:black;
+    background:rgb(240, 111, 25);
     width:100%;
     position:fixed;
     bottom:0;
     right:0;
-    border-top:3px solid white; 
+    border-top:5px solid gold; 
 }
 
 
