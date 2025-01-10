@@ -1,6 +1,13 @@
 body {
-    background-color: orange;
+    background-color: darkgray;
     text-align: center;
+    margin:auto;
+}
+
+h1{
+    background:grey;
+    padding:20px;
+    margin:0;
 }
 
 p{
@@ -10,7 +17,34 @@ p{
 button{
     background-color: inherit;
     font-size:50px;
-    margin:20px;
-    /* border:none; */
-    /* cursor: pointer; */
+    margin:auto 25px;
+    border:2px solid;
+    outline:none;
+    cursor: pointer;
+    transition-duration: 0.4s;
 }
+
+button:hover{
+    background-color:lightskyblue;
+}
+
+
+/* Testing Features */
+/* #choice{
+    display:flex;
+    justify-content: space-evenly;
+} */
+
+/* #options{
+    display: flex;
+    justify-content: space-evenly;
+} */
+
+
+
+/* Testing Features */
+/* #results {
+    display:flex;
+    justify-content:space-evenly;
+    background-color:red;
+} */

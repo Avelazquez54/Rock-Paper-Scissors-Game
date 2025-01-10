@@ -6,6 +6,10 @@ const para = document.createElement("p");
 const scores = document.createElement("p");
 result.appendChild(para);
 
+
+
+
+
 const btn = document.querySelector("#options");
 btn.addEventListener("click", (event)=> {
 let value = event.target;
@@ -31,11 +35,6 @@ switch(choice){
 });
 
 function playRound(userInput, computerChoice) {
-    // const result = document.querySelector("#options");
-    // const para = document.createElement("p");
-    // const scores = document.createElement("p");
-    // result.appendChild(para);
-
     if (userInput === "rock" && computerChoice === "paper"){
         para.textContent = "Somehow, their paper stopped your rock. You lost this round.";
         computerScore++;
@@ -63,7 +62,9 @@ function playRound(userInput, computerChoice) {
     isGameOver();
 }
 
-// Game checks if 
+// Game checks if either the user or the computer have reached 5 points. If either condition is met,
+// We pop an alert message declaring the winner and restart the game again. 
+// Will improve in the future to me more creative.
 function isGameOver(){
     if (userScore === 5) {
         alert("CONGRATULATIONS! You demolished that game mate. The game will now restart.");
