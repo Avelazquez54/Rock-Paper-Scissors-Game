@@ -6,3 +6,10 @@ Any advice on how to improve it is greatly appreciated! Always looking to learn 
 
 Huge thank you to The Odin Project for putting these lessons together and giving us the opportunity to study, practice, and implement all the skills and lessons we learned with this projects!
 
+Here is a preview on how the website looks as well as how it works:
+![image](https://github.com/user-attachments/assets/088f3a14-5a81-4aac-866f-5473f95267bc)
+
+When the user chooses an option to find against the computer, we display the result of that round:
+![image](https://github.com/user-attachments/assets/4ce04ad7-c7e0-41c4-bf7b-0fa274302d28)
+
+
