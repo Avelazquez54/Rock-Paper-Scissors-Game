@@ -1,66 +1,6 @@
-let userScore = 0;
-let computerScore = 0;
-
-const result = document.querySelector("#options");
-const para = document.createElement("p");
-const scores = document.createElement("p");
-const winner = document.createElement("p");
-result.appendChild(para);
-result.appendChild(winner);
-
-
-
-const restart = document.querySelector("#Restart");
-restart.style.display = "none";
-
-
-const btn = document.querySelector("#options");
-btn.addEventListener("click", (event)=> {
-let value = event.target;
-let input = value.id;
-
-const choice = input.toLowerCase();
-let compChoice = getComputerChoice()
-
-if (userScore === 5 || computerScore === 5){
-    return;
-}
-
-switch(choice){
-    case 'rock':
-        // console.log(choice);
-        playRound(choice, compChoice);
-        break;
-    case 'paper':
-        // console.log(choice);
-        playRound(choice, compChoice);
-        break;
-    case 'scissors':
-        // console.log(choice);
-        playRound(choice, compChoice);
-        break;
-    }
-
-});
-
-const option = document.querySelector("#choice");
-option.addEventListener("click", (event) => {
-    const value = event.target;
-    console.log(value);
-    const input = value.id;
-
-    const choice = input.toLowerCase();
-
-    switch(choice) {
-        case 'confirm':
-            restartGame();
-            break;
-        case 'deny':
-
-            break;
-    }
-});
-
+// Here we compare the userInput and computerChoice to declare the winner of the round and award points based
+// based on the logic set forth and update the results displayed on screen. We also call a function called
+// isGameOver() to see if either players reach a score of 5 to declare a winner.
 function playRound(userInput, computerChoice) {
     if (userInput === "rock" && computerChoice === "paper"){
         para.textContent = "Somehow, their paper stopped your rock. You lost this round.";
@@ -90,8 +30,7 @@ function playRound(userInput, computerChoice) {
 };
 
 // Game checks if either the user or the computer have reached 5 points. If either condition is met,
-// We pop an alert message declaring the winner and restart the game again. 
-// Will improve in the future to me more creative.
+// We display a results message and ask the user if the they would like to restart the game.
 function isGameOver(){
     if (userScore === 5) {
         winner.textContent = "CONGRATULATIONS! You demolished that game mate.";
@@ -104,8 +43,8 @@ function isGameOver(){
     }
 };
 
-
-
+// We call this function when the user wants to restart the game, to which get rid of the results message 
+// and reset the scores to start a new game
 function restartGame(){
     restart.style.display = "none";
     userScore = 0;
@@ -127,3 +66,75 @@ function getComputerChoice() {
         return "scissors";
     }
 };
+
+
+// Set the initial scores of the game so that we can update as the game is played.
+let userScore = 0;
+let computerScore = 0;
+
+// We select and create elements so that we may display and update the round results to the user
+// as they play the game as well as display a message for if they want to continue playing after
+// finishing.
+const result = document.querySelector("#options");
+const para = document.createElement("p");
+const scores = document.createElement("p");
+const winner = document.createElement("p");
+result.appendChild(para);
+result.appendChild(winner);
+
+const restart = document.querySelector("#Restart");
+restart.style.display = "none";
+
+let myWindow = "./index.html";
+
+// Here we have an eventListener() function establish to listen and pass on the user's button
+// choice when clicked.
+const btn = document.querySelector("#options");
+btn.addEventListener("click", (event)=> {
+let value = event.target;
+let input = value.id;
+
+const choice = input.toLowerCase();
+let compChoice = getComputerChoice();
+
+// case where we reached a conclusion to the game, and the user wants press any of the
+//  buttons.
+if (userScore === 5 || computerScore === 5){
+    return;
+}
+
+switch(choice){
+    case 'rock':
+        // console.log(choice);
+        playRound(choice, compChoice);
+        break;
+    case 'paper':
+        // console.log(choice);
+        playRound(choice, compChoice);
+        break;
+    case 'scissors':
+        // console.log(choice);
+        playRound(choice, compChoice);
+        break;
+    }
+
+});
+
+// Here we have an eventListener() function established to the buttons options that are
+// active after the user finishes a game.
+const option = document.querySelector("#choice");
+option.addEventListener("click", (event) => {
+    const value = event.target;
+    console.log(value);
+    const input = value.id;
+
+    const choice = input.toLowerCase();
+
+    switch(choice) {
+        case 'confirm':
+            restartGame();
+            break;
+        case 'deny':
+            break;
+    }
+});
