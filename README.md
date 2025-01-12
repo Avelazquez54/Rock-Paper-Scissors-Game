@@ -11,6 +11,7 @@ Here is a preview on how the website looks as well as how it works:
 
 
 When the user chooses an option to find against the computer, we display the result of that round:
-![image](https://github.com/user-attachments/assets/4ce04ad7-c7e0-41c4-bf7b-0fa274302d28)
+![image](https://github.com/user-attachments/assets/dee065e0-7083-47eb-9765-5d25d6809c75)
+
 
 
