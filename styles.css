@@ -32,14 +32,17 @@ button:hover{
     background-color:#342f66;
 }
 
+
+
 footer{
+    /* visibility: hidden; */
     font-weight: bold;
     color:black;
     background:rgb(255, 132, 49);
     width:100%;
     position:fixed;
     bottom:0;
-    right:0;
+    /* right:0; */
     border-top:5px solid gold; 
 }
 
